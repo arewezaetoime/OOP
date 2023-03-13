@@ -1,11 +1,11 @@
-from typing import Dict
 
+
+from typing import Dict
 from project.dough import Dough
 from project.topping import Topping
 
 
 class Pizza:
-
     def __init__(self, name: str, dough: Dough, max_number_of_toppings: int):
         self.name = name
         self.dough = dough
@@ -56,4 +56,3 @@ class Pizza:
 
     def calculate_total_weight(self):
         return sum(self.toppings.values()) + self.dough.weight
-
