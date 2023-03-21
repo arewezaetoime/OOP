@@ -19,17 +19,17 @@ class Group:
         self.name = name
         self.people: List[Person] = people
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.people)
 
-    def __add__(self, other):
+    def __add__(self, other) -> str and list:
         self.people.extend(other.people)
         return Group(f'{self.name} {other.name}', self.people)
 
-    def __getitem__(self, idx):
+    def __getitem__(self, idx) -> str:
         return f"Person {idx}: {self.people[idx]}"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Group {self.name} with members {', '.join(str(p) for p in self.people)}"
 
 
