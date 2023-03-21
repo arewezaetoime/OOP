@@ -23,7 +23,8 @@ class Group:
         return len(self.people)
 
     def __add__(self, other):
-        return Group(f'{self.name} {other.name}', self.people + other.people)
+        self.people.extend(other.people)
+        return Group(f'{self.name} {other.name}', self.people)
 
     def __getitem__(self, idx):
         return f"Person {idx}: {self.people[idx]}"
