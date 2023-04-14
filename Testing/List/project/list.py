@@ -2,14 +2,13 @@ from typing import List
 
 
 class IntegerList:
-    def __init__(self, integer: int):
-        self.integer = integer
+    def __init__(self):
         self.list_integers: List[int] = []
 
-    def add(self, element: int) -> None or ValueError:
+    def add(self, element) -> None or ValueError:
 
         if not isinstance(element, int):
-            raise ValueError()
+            raise Exception('Instance not integer')
 
         self.list_integers.append(element)
         return self.list_integers
@@ -44,24 +43,4 @@ class IntegerList:
     def get_index(self, value: int):
         return self.list_integers.index(value)
 
-
-from unittest import TestCase, main
-
-
-class TestIntegerList(TestCase):
-
-    def setUp(self):
-        self.integer_values_list = IntegerList(5)
-
-    def test_add_integer_class(self):
-        self.integer_values_list.add(4)
-
-        self.assertListEqual(self.integer_values_list.add(4), [4, 4])
-
-    def test_remove_index_value(self):
-        self.integer_values_list.remove_index(4)
-        self.assertListEqual(self.integer_values_list.remove_index(0), [4])
-
-if __name__ == '__main__':
-    main()
 
